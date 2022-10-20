@@ -1,6 +1,6 @@
 ## @nerdify/gql-tools
 
-A simple way to download the graphql schema and files for your react application.
+Effortless way to download the graphql schema and files for your React application.
 ## Installation
 ---
 
@@ -20,15 +20,15 @@ And with pnpm:
 pnpm add -D @nerdify/gql-tools
 ```
 
-## Usage
+## Usaging
 
-After install you can add it as a script `package.json`:
+After installing you can add it as a script `package.json`:
 
 ```
 "scripts": {
 ...
 "start": "react-scripts start",
-"build": "react-scripts build",
+"develop": "react-scripts build",
 "relay": "relay-compiler",
 "download-schema": "gql-tools schema $GRAPHQL_URL ./schema",
 
@@ -37,7 +37,7 @@ After install you can add it as a script `package.json`:
 
 Where `$GRAPHQL_URL` is the Graphql API URL and `./schema` is the name of the folder where the schema will be downloaded.
 
-Finally you can run the script in your terminal:
+To sum up, you can run the script on your terminal:
 
 ```
 npm download-schema
