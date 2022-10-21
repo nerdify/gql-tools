@@ -28,7 +28,7 @@ After installing you can add it as a script `package.json`:
 "scripts": {
 ...
 "start": "react-scripts start",
-"develop": "react-scripts build",
+"build": "react-scripts build",
 "relay": "relay-compiler",
 "download-schema": "gql-tools schema $GRAPHQL_URL ./schema",
 
