@@ -1,6 +1,6 @@
 ## @nerdify/gql-tools
 
-Effortless way to download the graphql schema and files for your React application.
+A set of tools for GraphQL
 ## Installation
 ---
 
