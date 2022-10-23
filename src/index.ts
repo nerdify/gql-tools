@@ -1,8 +1,25 @@
 #!/usr/bin/env node
 
-import yargs from 'yargs'
+import yargs, {type Argv} from 'yargs'
 import {hideBin} from 'yargs/helpers'
 import {downloadSchema} from './utils/download-schema.js'
+
+function schemaBuilder(argv: Argv) {
+  return argv
+    .positional('url', {
+      type: 'string',
+      describe: 'API-GQL URL',
+    })
+    .positional('outputPath', {
+      type: 'string',
+      default: process.cwd(),
+    })
+    .positional('fileName', {
+      type: 'string',
+      default: 'schema.graphql',
+    })
+    .demandOption(['url'])
+}
 
 yargs(hideBin(process.argv))
   .scriptName('gql-tools')
@@ -10,22 +27,7 @@ yargs(hideBin(process.argv))
   .command(
     'schema [url] [outputPath] [fileName]',
     'welcome ter yargs',
-    (yargs) => {
-      return yargs
-        .positional('url', {
-          type: 'string',
-          describe: 'API-GQL URL',
-        })
-        .positional('outputPath', {
-          type: 'string',
-          default: process.cwd(),
-        })
-        .positional('fileName', {
-          type: 'string',
-          default: 'schema.graphql',
-        })
-        .demandOption(['url'])
-    },
+    schemaBuilder,
     downloadSchema
   )
   .help().argv
